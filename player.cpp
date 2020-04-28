@@ -25,23 +25,23 @@ Player::Player(std::string name, std::string pos, int number){
 }
 
 // Getters
-std::string Player::getName(){
+std::string Player::getName() const{
 	return wholeName;
 }
 
-std::string Player::getPosition(){
+std::string Player::getPosition() const{
 	return position;
 }
 
-int Player::getNumber(){
+int Player::getNumber() const{
 	return num;
 }
 
-// int Player::getWins(){
+// int Player::getWins() const{
 // 	return wins;
 // }
 
-// int Player::getLosses(){
+// int Player::getLosses() const{
 // 	return losses;
 // }
 

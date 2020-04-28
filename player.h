@@ -5,26 +5,28 @@ class Player{
 
 public:
 	Player();
-	Player(std::string name, std::string position, int number, int wins, int losses);
+	Player(std::string name, std::string pos, int number);
 
-	//Getters
+	// Getters
 	std::string getName() const; 
 	std::string getPosition() const; 
 	int getNumber() const;
-	int getWins() const;
-	int getLosses() const;
+	//int getWins() const;
+	//int getLosses() const;
 	
-	//Setters
-	void addWin();
-	void addLoss();
+	// Setters
+	// void addWin();
+	// void addLoss();
 
 
-	//Methods that serve other purposes
-	void calcWinLossPercent();
+	// Methods that serve other purposes
+	// double calcWinPercent();
+	// double calcLossPercent();
 
-	//private variables
+
+// private variables
 private:
-	std::string firstName, position;
+	std::string wholeName, position;
 	int num, wins, losses;
 };
 

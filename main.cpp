@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <array>
 #include <algorithm>
 #include "player.h"
 
@@ -38,7 +39,7 @@ int main(){
 	roster.push_back(player12);
 
 
-
+	
 
 
 

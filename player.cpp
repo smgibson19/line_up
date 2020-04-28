@@ -3,9 +3,6 @@
 
 #include <iostream>
 #include <iomanip>
-#include <cmath>
-#include "football_game.h"
-#include "football_team.h"
 
 // Constructors
 Player::Player(){

@@ -11,18 +11,12 @@ public:
 	std::string getName() const; 
 	std::string getPosition() const; 
 	int getNumber() const;
-	//int getWins() const;
-	//int getLosses() const;
+	int getWins();
+	int gamesPlayed();
 	
 	// Setters
-	// void addWin();
-	// void addLoss();
-
-
-	// Methods that serve other purposes
-	// double calcWinPercent();
-	// double calcLossPercent();
-
+	void addWin();
+	void addGamePlayed();
 
 // private variables
 private:

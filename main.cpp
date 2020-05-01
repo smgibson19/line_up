@@ -46,7 +46,15 @@ int main(){
 	// history[3][roster.size()] = false means they lost the game
 	// imagine the vector to look like this : P1,P2,P3,P4,P5,P6,P7,P8,W/L
 
-	std::vector<bool> game1;
+	// these are games that have already happened
+	std::vector<bool> game1{true,false,false,false,true,false,true,false,true,false,true,true,false};
+	std::vector<bool> game2{false,true,true,false,true,false,true,false,false,true,false,true,true};
+	std::vector<bool> game3{false,false,true,true,false,false,true,true,true,false,true,false,true};
+	std::vector<bool> game4{false,true,false,true,true,true,true,false,true,false,false,false,true};
+	std::vector<bool> game5{true,true,false,true,true,true,false,false,false,false,false,true,false};
+	std::vector<bool> game6{false,false,false,false,false,false,true,true,true,true,true,true,false};
+	std::vector<bool> game7{false,true,true,true,false,true,false,true,false,true,false,false,true}; 
+	std::vector<bool> game8{true,false,false,false,false,true,false,true,true,true,true,false,false};
 
 
 

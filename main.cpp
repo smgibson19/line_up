@@ -7,6 +7,7 @@
 #include <array>
 #include <algorithm>
 #include "player.h"
+#include "player.cpp"
 
 int main(){
 

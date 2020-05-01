@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include "player.h"
 
 // Constructors
 Player::Player(){
@@ -59,3 +60,5 @@ int Player::getNumber() const{
 // double Player::calcLossPercent(){
 // 	return losses/(wins+losses);
 // }
+
+#endif

@@ -59,3 +59,5 @@ int Player::getNumber() const{
 // double Player::calcLossPercent(){
 // 	return losses/(wins+losses);
 // }
+
+#endif

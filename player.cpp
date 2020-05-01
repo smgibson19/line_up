@@ -34,31 +34,23 @@ std::string Player::getPosition() const{
 int Player::getNumber() const{
 	return num;
 }
+	
+// Getters
+int Player::getWins(){
+	return wins;
+}
 
-// int Player::getWins() const{
-// 	return wins;
-// }
+int Player::gamesPlayed(){
+	return gamesPlayed;
+}
 
-// int Player::getLosses() const{
-// 	return losses;
-// }
+// Setters
+void Player::addWin(){
+	wins++;
+}
 
-// // Setters
-// void Player::addWin(){
-// 	wins++;
-// }
-
-// void Player::addLoss(){
-// 	losses++;
-// }
-
-// // Methods
-// double Player::calcWinPercent(){
-// 	return wins/(wins+losses);
-// }
-
-// double Player::calcLossPercent(){
-// 	return losses/(wins+losses);
-// }
+void Player::addGamePlayed(){
+	gamesPlayed++;
+}
 
 #endif

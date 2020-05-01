@@ -21,7 +21,7 @@ public:
 // private variables
 private:
 	std::string wholeName, position;
-	int num, wins, losses;
+	int num, wins, gamesPlayed;
 };
 
 #endif

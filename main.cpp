@@ -7,7 +7,6 @@
 #include <array>
 #include <algorithm>
 #include "player.h"
-#include "player.cpp"
 
 int main(){
 
@@ -40,7 +39,7 @@ int main(){
 	roster.push_back(player12);
 
 
-	std::vector<std::vector<bool> history; // this vector will keep track of all the games/ who played/ win or lose
+	std::vector<std::vector<bool> > history; // this vector will keep track of all the games/ who played/ win or lose
 
 	// the vectors pushed into history will be in roster order with true or false
 	// so if for history[2][4] = true that means the third game player 5th in the roster was playing that game
@@ -57,6 +56,15 @@ int main(){
 	std::vector<bool> game7{false,true,true,true,false,true,false,true,false,true,false,false,true}; 
 	std::vector<bool> game8{true,false,false,false,false,true,false,true,true,true,true,false,false};
 
+
+	history.push_back(game1);
+	history.push_back(game2);
+	history.push_back(game3);
+	history.push_back(game4);
+	history.push_back(game5);
+	history.push_back(game6);
+	history.push_back(game7);
+	history.push_back(game8);
 
 
 

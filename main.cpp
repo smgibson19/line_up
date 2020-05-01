@@ -39,7 +39,15 @@ int main(){
 	roster.push_back(player12);
 
 
-	
+	std::vector<std::vector<int> history; // this vector will keep track of all the games/ who played/ win or lose
+
+	// the vectors pushed into history will be in roster order, 0 means true, 1 means false
+	// so if for history[2][4] = 0 that means the third game player 5th in the roster was playing that game
+	// history[3][roster.size()] = 1 means they lost the game
+	// imagine the vector to look like this : P1,P2,P3,P4,P5,P6,P7,P8,W/L
+	// so the 0/1 for a P means if the player was in the game or not. 0/1 for the W/L means if they won the game or not
+
+	std::vector<int> game1;
 
 
 

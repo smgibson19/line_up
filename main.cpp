@@ -10,7 +10,13 @@
 
 // Global variables
 std::vector<Player> roster;
+
+std::vector<Player> Opps;
+std::vector<Player> Outs;
+std::vector<Player> Mids;
+
 double winPercValues[12];
+std::string lineUp[6];
 //std::vector<std::vector<bool> > history; // this vector will keep track of all the games/ who played/ win or lose
 
 void recordWins(std::vector<bool> foo){
@@ -33,6 +39,7 @@ void winPercCalc(){
 	
 }
 
+// 
 
  
 int main(){
@@ -41,29 +48,51 @@ int main(){
 	// in later development this will be read in by a file
 	Player player1("A", "OPP", 1);
 	roster.push_back(player1);
+	Opps.push_back(player1);
+
 	Player player2("B", "OUT", 2);
 	roster.push_back(player2);
+	Outs.push_back(player2);
+
 	Player player3("C", "MID", 3);
 	roster.push_back(player3);
+	Mids.push_back(player3);
+
 	Player player4("D", "OPP", 4);
 	roster.push_back(player4);
+	Opps.push_back(player4);
+
 	Player player5("E", "OUT", 5);
 	roster.push_back(player5);
+	Outs.push_back(player5);
+
 	Player player6("F", "MID", 6);
 	roster.push_back(player6);
+	Mids.push_back(player6);
+
 	Player player7("G", "OPP", 7);
 	roster.push_back(player7);
+	Opps.push_back(player7);
+
 	Player player8("H", "OUT", 8);
 	roster.push_back(player8);
+	Outs.push_back(player8);
+
 	Player player9("I", "MID", 9);
 	roster.push_back(player9);
+	Mids.push_back(player9);
+
 	Player player10("J", "OPP", 10);
 	roster.push_back(player10);
+	Opps.push_back(player10);
+
 	Player player11("K", "OUT", 11);
 	roster.push_back(player11);
+	Outs.push_back(player11);
+
 	Player player12("L", "MID", 12);
 	roster.push_back(player12);
-
+	Mids.push_back(player12);
 
 
 	// the vectors pushed into history will be in roster order with true or false
@@ -105,8 +134,43 @@ int main(){
 	// history.push_back(game7);
 	// history.push_back(game8);
 
+	bool doTheyWantaLineUp= true;
+	int userAnsw;
 
-	// do you want a line up?
+	// loop to create lineups for user!
+	while (doTheyWantaLineUp){
+		std::cout<< "Would you like to generate a line up? Type 0 for yes and 1 for no" <<std::endl;
+		std::cin>> userAnsw >>std::endl;
+
+		if(userAnsw== 1){
+			doTheyWantaLineUp= false;
+			break;
+		}
+
+		std::vector<bool> newGame; // the game that is going to happen with the line up made, where the results are going to be saved
+
+		winPercCalc();
+
+
+
+
+
+
+		// asking win or loss
+		std::cout<< "Did the line up result in a win or loss? Type 0 for win and 1 for loss" <<std::endl;
+		std::cin>> userAnsw >>std::endl;
+
+		if(userAnsw== 0){
+			newGame.push_back(true);
+		}
+		else{
+			newGame.push_back(false);
+		}
+
+		// save game results player history
+		recordWins(newGame);
+
+	}
 
 
 

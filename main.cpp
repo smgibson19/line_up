@@ -24,7 +24,7 @@ void recordWins(std::vector<bool> foo){
 		if(foo[r]){ // checks if they played
 			roster[r].addGamePlayed();
 			if(foo[foo.size()-1]){ //checks if the team won that game
-				roster[r].addWins();
+				roster[r].addWin();
 			}
 		}
 	}
@@ -33,7 +33,7 @@ void recordWins(std::vector<bool> foo){
 // calculates the percent of wins out of total games played
 void winPercCalc(){
 	for(int i=0; i<roster.size(); ++i){
-		double answ= (double)roster[i].getWins()/roster[i].gamesPlayed();
+		double answ= (double)roster[i].getWins()/roster[i].numGamesPlayed();
 		winPercValues[i]= answ;
 	}
 	
@@ -139,8 +139,8 @@ int main(){
 
 	// loop to create lineups for user!
 	while (doTheyWantaLineUp){
-		std::cout<< "Would you like to generate a line up? Type 0 for yes and 1 for no" <<std::endl;
-		std::cin>> userAnsw >>std::endl;
+		std::cout<< "Would you like to generate a line up? Type 0 for yes and 1 for no" ;
+		std::cin>> userAnsw ;
 
 		if(userAnsw== 1){
 			doTheyWantaLineUp= false;
@@ -157,8 +157,8 @@ int main(){
 
 
 		// asking win or loss
-		std::cout<< "Did the line up result in a win or loss? Type 0 for win and 1 for loss" <<std::endl;
-		std::cin>> userAnsw >>std::endl;
+		std::cout<< "Did the line up result in a win or loss? Type 0 for win and 1 for loss" ;
+		std::cin>> userAnsw ;
 
 		if(userAnsw== 0){
 			newGame.push_back(true);

@@ -15,7 +15,7 @@ std::vector<Player> Opps;
 std::vector<Player> Outs;
 std::vector<Player> Mids;
 
-double winPercValues[12];
+// double winPercValues[12];
 std::string lineUp[6];
 //std::vector<std::vector<bool> > history; // this vector will keep track of all the games/ who played/ win or lose
 
@@ -27,17 +27,18 @@ void recordWins(std::vector<bool> foo){
 				roster[r].addWin();
 			}
 		}
+		roster[r].calcWOGP();
 	}
 }
 
-// calculates the percent of wins out of total games played
-void winPercCalc(){
-	for(int i=0; i<roster.size(); ++i){
-		double answ= (double)roster[i].getWins()/roster[i].numGamesPlayed();
-		winPercValues[i]= answ;
-	}
+// // calculates the percent of wins out of total games played
+// void winPercCalc(){
+// 	for(int i=0; i<roster.size(); ++i){
+// 		double answ= (double)roster[i].getWins()/roster[i].numGamesPlayed();
+// 		winPercValues[i]= answ;
+// 	}
 	
-}
+// }
 
  
 
@@ -149,10 +150,15 @@ int main(){
 
 		std::vector<bool> newGame; // the game that is going to happen with the line up made, where the results are going to be saved
 
-		winPercCalc();
+		// winPercCalc(); // calculates the win vs # of games played ratio for all players, the alg will use this data to decide who to pick
 
-		//generate line up
+		//generate line up!
 
+		// makes a copy roster for us to manipulate 
+		std::vector<char> copyRoster;
+		for(int y=0; y< roster.size(); y++){
+			copyRoster.push_back(roster[y]);
+		}
 
 
 

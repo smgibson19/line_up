@@ -39,7 +39,7 @@ void winPercCalc(){
 	
 }
 
-// 
+ 
 
  
 int main(){
@@ -151,13 +151,37 @@ int main(){
 
 		winPercCalc();
 
+		//generate line up
 
 
 
 
+
+
+
+
+
+
+		// prints out line up for user
+		std::cout<< "Here is your line up!" << std::endl;
+		for(int a=0; a< 6; a++){
+			std::cout<< "Position " << a << ": " << lineUp[a] << std::endl;
+		}
+
+		// add line up to new game
+		int count=0;
+		for(int x=0; x<roster.size(); x++){
+			if(roster[x].getName().compare(lineUp[count]) == 0){
+				newGame.push_back(true);
+				count++;
+			}
+			else{
+				newGame.push_back(false);
+			}
+		}
 
 		// asking win or loss
-		std::cout<< "Did the line up result in a win or loss? Type 0 for win and 1 for loss" ;
+		std::cout<< "Did the line up result in a win or loss? Type 0 for win and 1 for loss" << std::endl;
 		std::cin>> userAnsw ;
 
 		if(userAnsw== 0){

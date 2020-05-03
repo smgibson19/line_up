@@ -39,9 +39,6 @@ void recordWins(std::vector<bool> foo){
 // 	}
 	
 // }
-
- 
-
  
 int main(){
 
@@ -140,12 +137,12 @@ int main(){
 
 	// loop to create lineups for user!
 	while (doTheyWantaLineUp){
-		std::cout<< "Would you like to generate a line up? Type 0 for yes and 1 for no" ;
+		std::cout<< "Would you like to generate a line up? Type 0 for yes and 1 for no\n";
 		std::cin>> userAnsw ;
 
 		if(userAnsw== 1){
 			doTheyWantaLineUp= false;
-			std::cout<< "Have a great day!" ;
+			std::cout<< "Have a great day!\n" ;
 			break;
 
 		}
@@ -164,7 +161,9 @@ int main(){
 
 		// finding the best players for each position
 		for(int i=0; i<6; i++){
-			int best= -0; // this will be the index of the best player 
+			int best= 0; // this will be the index of the best player 
+			std::cout<< "here!\n" ;
+
 			for(int j=0; j<copyRoster.size(); j++){
 				if(i== 0 || i== 3){
 					if(copyRoster[j].getPosition().compare("OPP")== 0){
@@ -197,10 +196,12 @@ int main(){
 			copyRoster.erase(copyRoster.begin()+best-1);
 		}
 
+		std::cout<< "here!\n" ;
+
 		// prints out line up for user
-		std::cout<< "Here is your line up!" << std::endl;
+		std::cout<< "Here is your line up!" << "\n";
 		for(int a=0; a< 6; a++){
-			std::cout<< "Position " << a << ": " << lineUp[a] << std::endl;
+			std::cout<< "Position " << a << ": " << lineUp[a] << "\n";
 		}
 
 		// add line up to new game
@@ -216,7 +217,7 @@ int main(){
 		}
 
 		// asking win or loss
-		std::cout<< "Did the line up result in a win or loss? Type 0 for win and 1 for loss" << std::endl;
+		std::cout<< "Did the line up result in a win or loss? Type 0 for win and 1 for loss" << "\n";
 		std::cin>> userAnsw ;
 
 		if(userAnsw== 0){

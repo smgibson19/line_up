@@ -145,7 +145,9 @@ int main(){
 
 		if(userAnsw== 1){
 			doTheyWantaLineUp= false;
+			std::cout<< "Have a great day!" ;
 			break;
+
 		}
 
 		std::vector<bool> newGame; // the game that is going to happen with the line up made, where the results are going to be saved
@@ -155,18 +157,45 @@ int main(){
 		//generate line up!
 
 		// makes a copy roster for us to manipulate 
-		std::vector<char> copyRoster;
+		std::vector<Player> copyRoster;
 		for(int y=0; y< roster.size(); y++){
 			copyRoster.push_back(roster[y]);
 		}
 
-
-
-
-
-
-
-
+		// finding the best players for each position
+		for(int i=0; i<6; i++){
+			int best= -0; // this will be the index of the best player 
+			for(int j=0; j<copyRoster.size(); j++){
+				if(i== 0 || i== 3){
+					if(copyRoster[j].getPosition().compare("OPP")== 0){
+						if(copyRoster[j].getWOGP()> copyRoster[best].getWOGP()){
+							best = j;
+						}
+						if(copyRoster[j].getWOGP() == copyRoster[best].getWOGP()){
+							if(copyRoster[j].numGamesPlayed() > copyRoster[best].numGamesPlayed()){
+								best= j;
+							}
+						}
+					}
+				}
+				else if(i== 1 || i== 4){
+					if(copyRoster[j].getPosition().compare("OUT")== 0){
+						if(copyRoster[j].getWOGP()> copyRoster[best].getWOGP()){
+							best = j;
+						}
+					}
+				}
+				else{
+					if(copyRoster[j].getPosition().compare("MID")== 0){
+						if(copyRoster[j].getWOGP()> copyRoster[best].getWOGP()){
+							best = j;
+						}
+					}
+				}
+			}
+			lineUp[i]= copyRoster[best].getName();
+			copyRoster.erase(copyRoster.begin()+best-1);
+		}
 
 		// prints out line up for user
 		std::cout<< "Here is your line up!" << std::endl;
@@ -199,7 +228,6 @@ int main(){
 
 		// save game results player history
 		recordWins(newGame);
-
 	}
 
 

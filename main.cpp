@@ -6,6 +6,7 @@
 #include <string>
 #include <array>
 #include <algorithm>
+#include <iterator>
 #include "player.h"
 
 // Global variables
@@ -123,15 +124,6 @@ int main(){
 	std::vector<bool> game8{true,false,false,false,false,true,false,true,true,true,true,false,false};
 	recordWins(game8);
 
-	// history.push_back(game1);
-	// history.push_back(game2);
-	// history.push_back(game3);
-	// history.push_back(game4);
-	// history.push_back(game5);
-	// history.push_back(game6);
-	// history.push_back(game7);
-	// history.push_back(game8);
-
 	bool doTheyWantaLineUp= true;
 	int userAnsw;
 
@@ -149,7 +141,6 @@ int main(){
 
 		std::vector<bool> newGame; // the game that is going to happen with the line up made, where the results are going to be saved
 
-		// winPercCalc(); // calculates the win vs # of games played ratio for all players, the alg will use this data to decide who to pick
 
 		//generate line up!
 
@@ -162,8 +153,6 @@ int main(){
 		// finding the best players for each position
 		for(int i=0; i<6; i++){
 			int best= 0; // this will be the index of the best player 
-			std::cout<< "here!\n" ;
-
 			for(int j=0; j<copyRoster.size(); j++){
 				if(i== 0 || i== 3){
 					if(copyRoster[j].getPosition().compare("OPP")== 0){
@@ -174,6 +163,9 @@ int main(){
 							if(copyRoster[j].numGamesPlayed() > copyRoster[best].numGamesPlayed()){
 								best= j;
 							}
+							else{
+								best= best;
+							}
 						}
 					}
 				}
@@ -182,26 +174,48 @@ int main(){
 						if(copyRoster[j].getWOGP()> copyRoster[best].getWOGP()){
 							best = j;
 						}
+						if(copyRoster[j].getWOGP() == copyRoster[best].getWOGP()){
+							if(copyRoster[j].numGamesPlayed() > copyRoster[best].numGamesPlayed()){
+								best= j;
+							}
+							else{
+								best= best;
+							}
+						}
 					}
 				}
-				else{
+				else if(i== 2 || i== 5){
 					if(copyRoster[j].getPosition().compare("MID")== 0){
 						if(copyRoster[j].getWOGP()> copyRoster[best].getWOGP()){
 							best = j;
+						}
+						if(copyRoster[j].getWOGP() == copyRoster[best].getWOGP()){
+							if(copyRoster[j].numGamesPlayed() > copyRoster[best].numGamesPlayed()){
+								best= j;
+							}
+							else{
+								best= best;
+							}
 						}
 					}
 				}
 			}
 			lineUp[i]= copyRoster[best].getName();
-			copyRoster.erase(copyRoster.begin()+best-1);
-		}
+			std::vector<Player>::iterator vptr;
+			vptr= copyRoster.begin();
+			int count=1;
+			while(count<best){
+				count++;
+				vptr++;
+			}
+			copyRoster.erase(vptr);			
 
-		std::cout<< "here!\n" ;
+		}
 
 		// prints out line up for user
 		std::cout<< "Here is your line up!" << "\n";
 		for(int a=0; a< 6; a++){
-			std::cout<< "Position " << a << ": " << lineUp[a] << "\n";
+			std::cout<< "Position " << a+1 << ": " << lineUp[a] << "\n";
 		}
 
 		// add line up to new game

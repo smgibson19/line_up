@@ -22,24 +22,15 @@ std::string lineUp[6];
 
 void recordWins(std::vector<bool> foo){
 	for(int r=0; r<roster.size()-1; r++){
-		if(foo[r]){ // checks if they played
+		if(foo[r] == true){ // checks if they played
 			roster[r].addGamePlayed();
 			if(foo[foo.size()-1]){ //checks if the team won that game
 				roster[r].addWin();
 			}
+			roster[r].calcWOGP();
 		}
-		roster[r].calcWOGP();
 	}
 }
-
-// // calculates the percent of wins out of total games played
-// void winPercCalc(){
-// 	for(int i=0; i<roster.size(); ++i){
-// 		double answ= (double)roster[i].getWins()/roster[i].numGamesPlayed();
-// 		winPercValues[i]= answ;
-// 	}
-	
-// }
  
 int main(){
 
@@ -203,7 +194,7 @@ int main(){
 			lineUp[i]= copyRoster[best].getName();
 			std::vector<Player>::iterator vptr;
 			vptr= copyRoster.begin();
-			int count=1;
+			int count=0;
 			while(count<best){
 				count++;
 				vptr++;

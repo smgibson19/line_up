@@ -11,12 +11,13 @@ public:
 	std::string getName() const; 
 	std::string getPosition() const; 
 	int getNumber() const;
-	int getWins();
+	int getWins(); 
 	int numGamesPlayed();
 	//int getWOGP();
 	
 	// Setters
 	void addWin();
+	void removeWin(); // a loss removes a win
 	void addGamePlayed();
 	//void calcWOGP();
 

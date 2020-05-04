@@ -53,15 +53,15 @@ int Player::getWOGP(){
 
 // Setters
 void Player::addWin(){
-	wins++;
+	wins= wins +1;
 }
 
 void Player::addGamePlayed(){
-	gamesPlayed++;
+	gamesPlayed= gamesPlayed+1;
 }
 
 void Player::calcWOGP(){
-	winsOverGamesPlayed= (double)wins/gamesPlayed;
+	winsOverGamesPlayed= (float)wins/(float)gamesPlayed;
 }
 
 #endif

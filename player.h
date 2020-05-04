@@ -13,18 +13,18 @@ public:
 	int getNumber() const;
 	int getWins();
 	int numGamesPlayed();
-	int getWOGP();
+	//int getWOGP();
 	
 	// Setters
 	void addWin();
 	void addGamePlayed();
-	void calcWOGP();
+	//void calcWOGP();
 
 // private variables
 private:
 	std::string wholeName, position;
 	int num, wins, gamesPlayed;
-	float winsOverGamesPlayed;
+	//float winsOverGamesPlayed;
 };
 
 #endif

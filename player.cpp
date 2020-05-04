@@ -12,7 +12,7 @@ Player::Player(){
 	num= 0;
 	wins= 0;
 	gamesPlayed= 0;
-	winsOverGamesPlayed= 0.0;
+	//winsOverGamesPlayed= 0.0;
 }
 
 Player::Player(std::string name, std::string pos, int number){
@@ -21,7 +21,7 @@ Player::Player(std::string name, std::string pos, int number){
 	num= number;
 	wins= 0;
 	gamesPlayed= 0;
-	winsOverGamesPlayed= 0.0;
+	//winsOverGamesPlayed= 0.0;
 }
 
 // Getters
@@ -46,9 +46,9 @@ int Player::numGamesPlayed(){
 	return gamesPlayed;
 }
 
-int Player::getWOGP(){
-	return winsOverGamesPlayed;
-}
+// int Player::getWOGP(){
+// 	return winsOverGamesPlayed;
+// }
 
 
 // Setters
@@ -60,8 +60,8 @@ void Player::addGamePlayed(){
 	gamesPlayed= gamesPlayed+1;
 }
 
-void Player::calcWOGP(){
-	winsOverGamesPlayed= (float)wins/(float)gamesPlayed;
-}
+// void Player::calcWOGP(){
+// 	winsOverGamesPlayed= (float)wins/(float)gamesPlayed;
+// }
 
 #endif

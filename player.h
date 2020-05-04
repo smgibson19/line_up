@@ -24,7 +24,7 @@ public:
 private:
 	std::string wholeName, position;
 	int num, wins, gamesPlayed;
-	double winsOverGamesPlayed;
+	float winsOverGamesPlayed;
 };
 
 #endif

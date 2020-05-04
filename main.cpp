@@ -130,15 +130,13 @@ int main(){
 
 		}
 
-		std::vector<bool> newGame; // the game that is going to happen with the line up made, where the results are going to be saved
-
-
 		//generate line up!
 
 		// makes a copy roster for us to manipulate 
 		std::vector<Player> copyRoster;
 		for(int y=0; y< roster.size(); y++){
 			copyRoster.push_back(roster[y]);
+			std::cout << roster[y].getName() << "'s WOGP: " << roster[y].getWOGP()<< "\n";
 		}
 
 		// finding the best players for each position
@@ -209,31 +207,41 @@ int main(){
 			std::cout<< "Position " << a+1 << ": " << lineUp[a] << "\n";
 		}
 
+		std::vector<bool> newGame; // the game that is going to happen with the line up made, where the results are going to be saved
+
+		// asking win or loss
+		std::cout<< "Did the line up result in a win or loss? Type 0 for win and 1 for loss" << "\n";
+		std::cin>> userAnsw ;
+
 		// add line up to new game
 		int count=0;
 		for(int x=0; x<roster.size(); x++){
 			if(roster[x].getName().compare(lineUp[count]) == 0){
+				roster[x].addGamePlayed();
 				newGame.push_back(true);
 				count++;
+				if(userAnsw== 0){
+					roster[x].addWin();
+				}
+				roster[x].calcWOGP();
 			}
 			else{
 				newGame.push_back(false);
 			}
 		}
 
-		// asking win or loss
-		std::cout<< "Did the line up result in a win or loss? Type 0 for win and 1 for loss" << "\n";
-		std::cin>> userAnsw ;
-
+		
 		if(userAnsw== 0){
 			newGame.push_back(true);
 		}
-		else{
+		else if(userAnsw== 1){
 			newGame.push_back(false);
 		}
 
 		// save game results player history
-		recordWins(newGame);
+		//recordWins(newGame);
+
+
 	}
 
 

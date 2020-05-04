@@ -27,7 +27,9 @@ void recordWins(std::vector<bool> foo){
 			if(foo[foo.size()-1]){ //checks if the team won that game
 				roster[r].addWin();
 			}
-			//roster[r].calcWOGP();
+			else{
+				roster[r].removeWin();
+			}
 		}
 	}
 }
@@ -223,7 +225,9 @@ int main(){
 				if(userAnsw== 0){
 					roster[x].addWin();
 				}
-				//roster[x].calcWOGP();
+				if(userAnsw== 1){
+					roster[x].removeWin();
+				}
 			}
 			else{
 				newGame.push_back(false);

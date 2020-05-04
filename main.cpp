@@ -27,7 +27,7 @@ void recordWins(std::vector<bool> foo){
 			if(foo[foo.size()-1]){ //checks if the team won that game
 				roster[r].addWin();
 			}
-			roster[r].calcWOGP();
+			//roster[r].calcWOGP();
 		}
 	}
 }
@@ -136,7 +136,7 @@ int main(){
 		std::vector<Player> copyRoster;
 		for(int y=0; y< roster.size(); y++){
 			copyRoster.push_back(roster[y]);
-			std::cout << roster[y].getName() << "'s WOGP: " << roster[y].getWOGP()<< "\n";
+			//std::cout << roster[y].getName() << "'s WOGP: " << roster[y].getWOGP()<< "\n";
 		}
 
 		// finding the best players for each position
@@ -145,10 +145,10 @@ int main(){
 			for(int j=0; j<copyRoster.size(); j++){
 				if(i== 0 || i== 3){
 					if(copyRoster[j].getPosition().compare("OPP")== 0){
-						if(copyRoster[j].getWOGP()> copyRoster[best].getWOGP()){
+						if(copyRoster[j].getWins()> copyRoster[best].getWins()){
 							best = j;
 						}
-						if(copyRoster[j].getWOGP() == copyRoster[best].getWOGP()){
+						if(copyRoster[j].getWins() == copyRoster[best].getWins()){
 							if(copyRoster[j].numGamesPlayed() > copyRoster[best].numGamesPlayed()){
 								best= j;
 							}
@@ -160,10 +160,10 @@ int main(){
 				}
 				else if(i== 1 || i== 4){
 					if(copyRoster[j].getPosition().compare("OUT")== 0){
-						if(copyRoster[j].getWOGP()> copyRoster[best].getWOGP()){
+						if(copyRoster[j].getWins()> copyRoster[best].getWins()){
 							best = j;
 						}
-						if(copyRoster[j].getWOGP() == copyRoster[best].getWOGP()){
+						if(copyRoster[j].getWins() == copyRoster[best].getWins()){
 							if(copyRoster[j].numGamesPlayed() > copyRoster[best].numGamesPlayed()){
 								best= j;
 							}
@@ -175,10 +175,10 @@ int main(){
 				}
 				else if(i== 2 || i== 5){
 					if(copyRoster[j].getPosition().compare("MID")== 0){
-						if(copyRoster[j].getWOGP()> copyRoster[best].getWOGP()){
+						if(copyRoster[j].getWins()> copyRoster[best].getWins()){
 							best = j;
 						}
-						if(copyRoster[j].getWOGP() == copyRoster[best].getWOGP()){
+						if(copyRoster[j].getWins() == copyRoster[best].getWins()){
 							if(copyRoster[j].numGamesPlayed() > copyRoster[best].numGamesPlayed()){
 								best= j;
 							}
@@ -223,7 +223,7 @@ int main(){
 				if(userAnsw== 0){
 					roster[x].addWin();
 				}
-				roster[x].calcWOGP();
+				//roster[x].calcWOGP();
 			}
 			else{
 				newGame.push_back(false);

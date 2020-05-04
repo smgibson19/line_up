@@ -12,10 +12,6 @@
 // Global variables
 std::vector<Player> roster;
 
-std::vector<Player> Opps;
-std::vector<Player> Outs;
-std::vector<Player> Mids;
-
 // double winPercValues[12];
 std::string lineUp[6];
 //std::vector<std::vector<bool> > history; // this vector will keep track of all the games/ who played/ win or lose
@@ -40,52 +36,48 @@ int main(){
 	// in later development this will be read in by a file
 	Player player1("A", "OPP", 1);
 	roster.push_back(player1);
-	Opps.push_back(player1);
 
 	Player player2("B", "OUT", 2);
 	roster.push_back(player2);
-	Outs.push_back(player2);
 
 	Player player3("C", "MID", 3);
 	roster.push_back(player3);
-	Mids.push_back(player3);
 
 	Player player4("D", "OPP", 4);
 	roster.push_back(player4);
-	Opps.push_back(player4);
 
 	Player player5("E", "OUT", 5);
 	roster.push_back(player5);
-	Outs.push_back(player5);
 
 	Player player6("F", "MID", 6);
 	roster.push_back(player6);
-	Mids.push_back(player6);
 
 	Player player7("G", "OPP", 7);
 	roster.push_back(player7);
-	Opps.push_back(player7);
 
 	Player player8("H", "OUT", 8);
 	roster.push_back(player8);
-	Outs.push_back(player8);
 
 	Player player9("I", "MID", 9);
 	roster.push_back(player9);
-	Mids.push_back(player9);
 
 	Player player10("J", "OPP", 10);
 	roster.push_back(player10);
-	Opps.push_back(player10);
 
 	Player player11("K", "OUT", 11);
 	roster.push_back(player11);
-	Outs.push_back(player11);
 
 	Player player12("L", "MID", 12);
 	roster.push_back(player12);
-	Mids.push_back(player12);
 
+	Player player13("M", "OPP", 13);
+	roster.push_back(player13);
+
+	Player player14("N", "OUT", 14);
+	roster.push_back(player14);
+
+	Player player15("O", "MID", 15);
+	roster.push_back(player15);
 
 	// the vectors pushed into history will be in roster order with true or false
 	// so if for history[2][4] = true that means the third game player 5th in the roster was playing that game
@@ -93,29 +85,36 @@ int main(){
 	// imagine the vector to look like this : P1,P2,P3,P4,P5,P6,P7,P8,W/L
 
 	// these are games that have already happened
-	std::vector<bool> game1{true,false,false,false,true,false,true,false,true,false,true,true,false};
+	std::vector<bool> game1{true,false,false,false,true,false,true,false,true,false,true,true,false,false,false,false};
 	recordWins(game1);
 
-	std::vector<bool> game2{false,true,true,false,true,false,true,false,false,true,false,true,true};
+	std::vector<bool> game2{false,true,true,false,true,false,true,false,false,true,false,true,false,false,false,true};
 	recordWins(game2);
 
-	std::vector<bool> game3{false,false,true,true,false,false,true,true,true,false,true,false,true};
+	std::vector<bool> game3{false,false,true,true,false,false,true,true,true,false,true,false,false,false,false,true};
 	recordWins(game3);
 
-	std::vector<bool> game4{false,true,false,true,true,true,true,false,true,false,false,false,true};
+	std::vector<bool> game4{false,true,false,true,true,true,true,false,true,false,false,false,false,false,false,true};
 	recordWins(game4);
 
-	std::vector<bool> game5{true,true,false,true,true,true,false,false,false,false,false,true,false};
+	std::vector<bool> game5{true,true,false,true,true,true,false,false,false,false,false,true,false,false,false,false};
 	recordWins(game5);
 
-	std::vector<bool> game6{false,false,false,false,false,false,true,true,true,true,true,true,false};
+	std::vector<bool> game6{false,false,false,false,false,false,true,true,true,true,true,true,false,false,false,false};
 	recordWins(game6);
 
-	std::vector<bool> game7{false,true,true,true,false,true,false,true,false,true,false,false,true}; 
+	std::vector<bool> game7{false,true,true,true,false,true,false,true,false,true,false,false,false,false,false,true}; 
 	recordWins(game7);
 
-	std::vector<bool> game8{true,false,false,false,false,true,false,true,true,true,true,false,false};
+	std::vector<bool> game8{true,false,false,false,false,true,false,true,true,true,true,false,false,false,false,false};
 	recordWins(game8);
+
+	std::vector<bool> game9{false,false,true,true,false,false,false,true,false,false,false,false,true,true,true,false}; 
+	recordWins(game9);
+
+	std::vector<bool> game10{true,false,false,false,true,true,false,false,true,false,false,false,true,true,false,true};
+	recordWins(game10);
+
 
 	bool doTheyWantaLineUp= true;
 	int userAnsw;

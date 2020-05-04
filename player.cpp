@@ -60,6 +60,11 @@ void Player::addGamePlayed(){
 	gamesPlayed= gamesPlayed+1;
 }
 
+void Player::removeWin(){
+	wins= wins-1;
+}
+
+
 // void Player::calcWOGP(){
 // 	winsOverGamesPlayed= (float)wins/(float)gamesPlayed;
 // }
